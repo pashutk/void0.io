@@ -6,14 +6,14 @@
 title: Hexo
 subtitle:
 description:
-author: John Doe
+author: Pavel Glushkov
 language:
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
-root: /
+url: http://pashutk.ru/void0.io
+root: /void0.io/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -63,9 +63,17 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: anatole
+
+archive_generator:
+  per_page: 0
+  yearly: false
+  monthly: false
+  daily: false
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/pashutk/void0.io
+  branch: gh-pages

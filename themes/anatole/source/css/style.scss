@@ -221,8 +221,12 @@ a:hover, a:active {
 		}
 
 		.title{
+			img {
+				display: none;
+			}
+
 			h3 {
-				text-transform: uppercase;
+				// text-transform: uppercase;
 				font-size: 2rem;
 				font-weight: bold;
 				letter-spacing: 2px;
@@ -770,7 +774,7 @@ a.btn {
 		line-height: 1.6;
 	}
 	.content{
-		margin-top: 420px;
+		margin-top: 280px;
 		width: 100%;
 		z-index: 2;
 		position: absolute;

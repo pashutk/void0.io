@@ -1,7 +1,7 @@
 extends partial/layout
 block content
 	.autopagerize_page_element: .content
-		- page.posts.each(function (item) {
+		- page.posts.filter((item) => !item.categories.data.some((item) => item.name === 'link')).each(function (item) {
 			include mixins
 			+make_post(item, false)
 		- })

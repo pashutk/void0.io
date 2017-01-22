@@ -27,6 +27,15 @@ mixin make_post(item, is_detail)
 							a.tag(href=config.root + item.path, title= item.name)= item.name + " "
 					- });
 
+mixin make_link(item)
+	.link
+		a(href=item.link)
+			h3.link-title= item.title
+			p.link-url
+				|(
+				!= item.link
+				|)
+			
 
 mixin make_pager()
 	- var prev = page.prev_link

@@ -1,9 +1,15 @@
 extends partial/layout
 block content
-	.autopagerize_page_element: .content
-		- page.posts.filter((item) => !item.categories.data.some((item) => item.name === 'link')).each(function (item) {
-			include mixins
-			+make_post(item, false)
-		- })
-		include mixins
-		+make_pager(__('prev'), __('next'))
+  .autopagerize_page_element: .content
+    include mixins
+    .last_links.animated.fadeInDown
+      h3.last_links-header
+        a.last_links-header-link(href=url_for('/categories/link'))= 'Последние ссылки'
+      - page.posts.filter((item) => item.categories.data.some((item) => item.name === 'link')).each((item) => {
+        +make_link(item)
+      - })
+    - page.posts.filter((item) => !item.categories.data.some((item) => item.name === 'link')).each(function (item) {
+      +make_post(item, false)
+    - })
+    include mixins
+    +make_pager(__('prev'), __('next'))

@@ -2,19 +2,19 @@
   .nav
     li
       if is_home()
-        a.current(href="/")= __('Home')					
+        a.current(href="/")= __('Главная')					
       else
-        a(href="/")= __('Home')	
+        a(href="/")= __('Главная')	
     li
       if is_current('links')
-        a.current(href=url_for('/categories/link'))= __('Links')
+        a.current(href=url_for('/categories/link'))= __('Лента ссылок')
       else
-        a(href=url_for('/categories/link'))= __('Links')
+        a(href=url_for('/categories/link'))= __('Лента ссылок')
     li
       if is_current('about')
-        a.current(href="/about")= __('About')			
+        a.current(href=url_for('about'))= __('О сайте')			
       else
-        a(href="/about")= __('About')
+        a(href=url_for('about'))= __('О сайте')
   .information
     .back_btn
       li
